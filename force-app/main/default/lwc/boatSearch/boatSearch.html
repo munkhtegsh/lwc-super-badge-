@@ -16,11 +16,14 @@
     <lightning-layout-item size="12" class="slds-p-top_small slds-is-relative">
       <!-- Spinner goes here -->
       <!-- <div class={isLoading}> -->
+      <template if:true={isLoading}>
         <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+      </template>
       <!-- </div> -->
       <!-- boatSearchResults goes here -->
-      <lightning-combobox name="progress" value={value} placeholder="Select Progress" options={options}
-        onchange={searchBoats}></lightning-combobox>
+      <c-boat-search-form></c-boat-search-form>
+      <c-boat-search-results boats={boats}></c-boat-search-results>
+
       <!-- onloading={handleLoading} ondoneloading={handleDoneLoading} -->
     </lightning-layout-item>
   </lightning-layout>
